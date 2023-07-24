@@ -18,6 +18,8 @@ I use Marp instead of Powerpoint to create presenations I use in lectures, talks
 
 # InstalingMarp
 
+## Basic Setup
+
 If you want to use Marp with [VSCode](https://code.visualstudio.com/) or [VSCodium](https://vscodium.com/), you can find it in the normal VSCode marketplace, e.g.:
 
 [Marp for VS Code](https://marketplace.visualstudio.com/items?itemName=marp-team.marp-vscode)
@@ -31,6 +33,17 @@ By far the easiest way to install Marp is to use one of the standalone binaries 
 I recommend putting the resulting Marp executable somewhere in your system Path. 
 
 NOTE that if you instead use pip or npx to install Marp, it may already be on your path. Use the [Marp-CLI](https://github.com/marp-team/marp-cli) instructions for info on how to get to the point where you can run Marp from anywhere on your system.
+
+## Setup Chrome Browser for Rendering
+
+The Marp-CLI page discusses how to make sure you have chrome setup for rendering. On [Ubuntu Linux](https://ubuntu.com/download/desktop) (actually, I use [Pop!_OS](https://pop.system76.com/), an OS by system76 based on Ubuntu), I used these instructions:
+
+```bash
+sudo add-apt-repository ppa:savoury1/chromium
+sudo apt update
+sudo apt install chromium-browser
+export CHROME_PATH=/usr/bin/chromium-browser
+```
 
 ---
 
