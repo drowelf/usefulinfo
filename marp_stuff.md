@@ -168,6 +168,12 @@ marp --pdf --html --output=. --input-dir=. --allow-local-files
 # marp2pdf
 ```
 
+### Workflow
+
+NOTE: the command in `dev.h` will automatically re-create slides.html from your `slides.md` file (that's what the `-w` flag does). It will also render the current slideshow in a little window so you can see what you are doing (that's what the `-p` flag does).
+
+- Make a change to slides.md
+
 ---
 
 # WhatIsMarp2PDF
