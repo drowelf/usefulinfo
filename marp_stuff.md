@@ -6,6 +6,13 @@
 - [What is Marp2PDF?](#WhatIsMarp2PDF)
 - [Header Slides](#HeaderSlides)
 - [Images](#Images)
+- [Videos](#Videos)
+- [Putting Content Into Columns](#ColumnateContent)
+- [Linking Slides](#SlideLinks)
+- [Override Slide Defaults](#OverrideSlideDefaults)
+- [Fit Text To Slide Width](#FitTextWidth)
+- [Change Word or Phrase Color](#StylingColor)
+- [Change Word or Phrase Size](#SylingFont)
 
 ---
 
@@ -15,7 +22,9 @@
 
 I use Marp instead of Powerpoint to create presenations I use in lectures, talks, and tutorials. If you're a coder or otherwise comfortable with creating documents with plaintext (especially Markdown), then this might be for you. However, for most people, using PowerPoint or some other presenetaiton software package will be faaar easier! An easy way to get started is to use Marp via [VSCode](https://code.visualstudio.com/) or [VSCodium](https://vscodium.com/), but I use Marp CLI with [PyCharm](https://www.jetbrains.com/pycharm/).
 
+Quick Overview Video: [https://www.youtube.com/watch?v=EzQ-p41wNEE](https://www.youtube.com/watch?v=EzQ-p41wNEE)
 More about Marp Here: [https://marp.app/](https://marp.app/)
+Quick video
 
 ---
 
@@ -259,6 +268,215 @@ This allows you to place an image anywhere on the slide!
 <img src="./images/myimage.png" alt="My Image" style="position: absolute; top: 20px; right: 20px; width: 350px; height: auto;" />
 ```
 
+---
 
+# Videos
 
+## Play video files on your computer
+
+```markdown
+<iframe width="100%" height="100%"
+  src="./media/my_video_file.mp4">
+</iframe> 
+```
+
+## Play youtube videos
+
+```markdown
+<iframe width="100%" height="100%"
+  src="https://www.youtube.com/embed/EzQ-p41wNEE">
+</iframe> 
+```
+
+---
+
+# ColumnateEqually
+
+If you want to columnate you content with equal columns, this is the section for you!
+
+## Text on Right, Image on Left
+
+Note: Image size is in inches, you could also use `px` to specify size in pixels.
+
+```markdown
+# Two Cols, one pic, one text
+
+- One
+- Two
+- Three
+- Four
+
+![bg right width:4in](images/my_image.jpg)
+```
+
+## Text on Left, Image on Right
+
+Two Columns with a 50/50 Split
+
+```markdown
+# Two Cols, one pic, one text
+
+- One
+- Two
+- Three
+- Four
+
+![bg left width:4in](images/my_image.jpg)
+```
+
+## Text (or whatever) on both sides
+
+Make sure you have a space between the HTML tags and markdown content!
+
+Two Columns with 50/50 Split
+
+```markdown
+<div class="two_columns">
+<div>
+
+- aa 
+- bb
+- cc
+
+</div>
+<div>
+
+- 1
+- 2
+- 3
+
+An Image:<br/>
+![w:240](./images/my_image.jpg)
+
+</div>
+</div>
+```
+
+# Three Columns
+
+Three Columns with 33/33/33 Split
+
+<div class="three_columns">
+<div>
+
+- aa 
+- bb
+- cc
+
+</div>
+<div>
+
+- a
+- b
+- c
+
+</div>
+<div>
+
+- x
+- y
+- z
+
+</div>
+</div>
+
+# Two Columns, but with Unequal Columns
+
+For a Two-Column 60/40 Split:
+
+```markdown
+<div class="two_columns_60_40">
+<div>
+
+![](./images/my_image.jpg)
+
+</div>
+<div>
+
+- a
+- b
+- c
+
+</div>
+</div>
+```
+
+For a Two-Column 70/30 Split:
+
+```markdown
+<div class="two_columns_70_30">
+<div>
+
+![](./images/my_image.jpg)
+
+</div>
+<div>
+
+- a
+- b
+- c
+
+</div>
+</div>
+```
+
+---
+
+# SlideLinks
+
+```markdown
+[Jump to Slide 2](#2)
+```
+
+NOTE: You don't have to do anything on slide 2, Marp will automatically make the link for you. Now when you're viewing your slides, you just click the link and you will jump to that slide.
+
+---
+
+# OverrideSlideDefaults
+
+If you want to change the default background and/or foreground for an individual slide, use these directives within a slide:
+
+```markdown
+<!--_backgroundColor: black-->
+<!--_color: red-->
+```
+
+---
+
+# FitTextWidth
+
+If you want to make some text fill up the slide, use this:
+
+```markdown
+<!--fit-->Huge Text!!
+```
+
+---
+
+# StylingColor
+
+```markdown
+This is some **bold** text.
+This is some <span style="color:yellow"><u>underlined</u></span> text.
+<span style="color:orange">This text is all orange</span>
+```
+
+---
+
+# StylingFont
+
+Keep a space between the span tags and the markdown list
+
+```markdown
+<span style="font-size: 28px">
+
+- this is a ine of **bulleted** text
+- this is another line
+- this markedth the third line
+- ok, this is enough!
+
+</span>
+```
+
+---
 
