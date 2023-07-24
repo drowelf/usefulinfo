@@ -16,6 +16,7 @@
 - [Change Word or Phrase Size](#StylingFont)
 - [Using Mermaid Diagrams With Marp](#MermaidMarp)
 - [Using Plotly Graphs With Marp (NOT WORKING)](#PlotlyMarp)
+- [Useful Websites](#UsefulWebsites)
 
 ---
 
@@ -570,8 +571,17 @@ graph TD;
     B-->D;
     C-->D;
 </div>
+```
 
+By default, Mermaid diagrams can be small. You can put something like this in the Marp frontmatter section to adjust Mermaid diagram size:
 
+```
+  svg[id^="mermaid-"] { 
+    min-width: 480px; 
+    max-width: 960px; 
+    min-height: 360px; 
+    max-height: 600px; 
+  }
 ```
 
 ---
@@ -636,3 +646,10 @@ Plotly.newPlot('my-graph', data, layout);
 ---
 
 ```
+
+---
+
+# UsefulWebsites
+
+- CommonMark Markdown Syntax [https://commonmark.org/help/](https://commonmark.org/help/)
+- Marp Documentation [https://marpit.marp.app/markdown](https://marpit.marp.app/markdown)
