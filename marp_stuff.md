@@ -12,7 +12,7 @@
 - [Override Slide Defaults](#OverrideSlideDefaults)
 - [Fit Text To Slide Width](#FitTextWidth)
 - [Change Word or Phrase Color](#StylingColor)
-- [Change Word or Phrase Size](#SylingFont)
+- [Change Word or Phrase Size](#StylingFont)
 
 ---
 
