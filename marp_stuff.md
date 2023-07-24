@@ -468,7 +468,7 @@ I think `:root` changed the default text.
 <style>
   :root {
     --color-background: #101010;
-    --color-foreground: #FFFFFF;
+    --color-foreground: #FFFFCC;
   }
 
   h1 {
