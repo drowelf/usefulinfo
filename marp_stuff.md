@@ -15,7 +15,7 @@
 - [Change Word or Phrase Color](#StylingColor)
 - [Change Word or Phrase Size](#StylingFont)
 - [Using Mermaid Diagrams With Marp](#MermaidMarp)
-- [Using Plotly Graphs With Marp (NOT WORKING)](#PlotlyMarp)
+- [Using Plotly Graphs With Marp](#PlotlyMarp)
 - [Useful Websites](#UsefulWebsites)
 
 ---
@@ -646,6 +646,41 @@ Plotly.newPlot('my-graph', data, layout);
 ---
 
 ```
+
+The above example is a little odd given it's reversed y-axis. Here is a slightly more conventional graph:
+
+```markdown
+
+---
+
+<div id="plotly-graph"></div>
+
+<script src="https://cdn.plot.ly/plotly-latest.min.js"></script>
+<script>
+  // Sample data
+  const x = [1, 2, 3, 4, 5];
+  const y = [10, 15, 13, 17, 20];
+
+  // Create the Plotly graph
+  const trace = {
+    x: x,
+    y: y,
+    mode: 'lines+markers',
+    type: 'scatter',
+  };
+  const data = [trace];
+  const layout = {
+    title: 'My Plotly Line Graph',
+    xaxis: { title: 'X-axis' },
+    yaxis: { title: 'Y-axis' },
+  };
+  Plotly.newPlot('plotly-graph', data, layout);
+</script>
+
+---
+
+```
+
 
 ---
 
