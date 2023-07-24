@@ -14,7 +14,7 @@
 
 I use Marp instead of Powerpoint to create presenations I use in lectures, talks, and tutorials. If you're a coder or otherwise comfortable with creating documents with plaintext (especially Markdown), then this might be for you. However, for most people, using PowerPoint or some other presenetaiton software package will be faaar easier! An easy way to get started is to use Marp via [VSCode](https://code.visualstudio.com/) or [VSCodium](https://vscodium.com/), but I use Marp CLI with [PyCharm](https://www.jetbrains.com/pycharm/).
 
-[More about Marp Here:](https://marp.app/)
+More about Marp Here: [https://marp.app/](https://marp.app/)
 
 ---
 
