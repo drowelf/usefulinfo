@@ -14,6 +14,7 @@
 - [Fit Text To Slide Width](#FitTextWidth)
 - [Change Word or Phrase Color](#StylingColor)
 - [Change Word or Phrase Size](#StylingFont)
+- [Using Mermaid Diagrams With Marp](#MermaidMarp)
 
 ---
 
@@ -512,6 +513,28 @@ Keep a space between the span tags and the markdown list
 - ok, this is enough!
 
 </span>
+```
+
+---
+
+# MermaidMarp
+
+NOTE: This works in a real web browser, so it should be good to go for your presentations. However, be aware that the letters aren't rendering correctly in the little Marp chrome preview window.
+
+NOTE: You can put the last 3 lines at the top of your first slide for presentation wide Mermaid use. Otherwise, if it's just for one slide, you could use as shown.
+
+```markdown
+<div class="mermaid">
+graph TD;
+    A-->B;
+    A-->C;
+    B-->D;
+    C-->D;
+</div>
+
+<!-- mermaid.js -->
+<script src="https://unpkg.com/mermaid@8.1.0/dist/mermaid.min.js"></script>
+<script>mermaid.initialize({startOnLoad:true});</script>
 ```
 
 ---
