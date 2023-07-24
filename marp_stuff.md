@@ -9,6 +9,7 @@
 - [Videos](#Videos)
 - [Putting Content Into Columns](#ColumnateContent)
 - [Linking Slides](#SlideLinks)
+- [Override Presentation Defaults](#OverridePresentationDefaults)
 - [Override Slide Defaults](#OverrideSlideDefaults)
 - [Fit Text To Slide Width](#FitTextWidth)
 - [Change Word or Phrase Color](#StylingColor)
@@ -178,7 +179,7 @@ marp --pdf --html --output=. --input-dir=. --allow-local-files
 # marp2pdf
 ```
 
-### Workflow
+### Development Workflow
 
 NOTE: the command in `dev.sh` will automatically re-create slides.html from your `slides.md` file (that's what the `-w` flag does). It will also render the current slideshow in a little window so you can see what you are doing (that's what the `-p` flag does). Here is my workflow:
 
@@ -192,6 +193,19 @@ NOTE: the command in `dev.sh` will automatically re-create slides.html from your
 - To create a PDF, I run `./make_pdf.sh`
 
 That's it. Making changes to  my slides is as easy as editing the text in `slides.md`.
+
+### Using My Presentations
+
+Marp renders your markdown presentation code into a working static HTML presentation. 
+Thus, to show your presentation, just drag `slides.html` into your browser!
+I do the following:
+
+- Drag `slides.html` into Firefox
+- Click the Presenter's View Icon on the right side of the slide navigation bar at the bottom, which creates another webpage showing the presenter's view.
+- I keep the presenter's view page on the primary monitor where I can see it and I drag the normal presentation window onto the external monitor so the audiene can see it.
+- moving around in presenter's view automatically controls the audience view.
+- Note: To show videos, you have to press start/stop/etc. on the normal presentation window.
+- When done, just close the slideshow browser tabs and you're done.
 
 ---
 
@@ -439,6 +453,26 @@ If you want to change the default background and/or foreground for an individual
 ```markdown
 <!--_backgroundColor: black-->
 <!--_color: red-->
+```
+
+---
+
+
+# OverridePresentationDefaults
+
+Put this at the top of the first slide:
+
+```markdown
+<style>
+  :root {
+    --color-background: #101010;
+    --color-foreground: #FFFFFF;
+  }
+
+  h1 {
+    font-family: Courier New;
+  }
+</style>
 ```
 
 ---
