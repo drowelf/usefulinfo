@@ -460,7 +460,9 @@ If you want to change the default background and/or foreground for an individual
 
 # OverridePresentationDefaults
 
-Put this at the top of the first slide:
+Put this at the top of the first slide.
+This will only change the tags you override. 
+I think `:root` changed the default text.
 
 ```markdown
 <style>
