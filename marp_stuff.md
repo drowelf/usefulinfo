@@ -15,6 +15,7 @@
 - [Change Word or Phrase Color](#StylingColor)
 - [Change Word or Phrase Size](#StylingFont)
 - [Using Mermaid Diagrams With Marp](#MermaidMarp)
+- [Using Plotly Graphs With Marp (NOT WORKING)](#PlotlyMarp)
 
 ---
 
@@ -283,6 +284,23 @@ This allows you to place an image anywhere on the slide!
 <img src="./images/myimage.png" alt="My Image" style="position: absolute; top: 20px; right: 20px; width: 350px; height: auto;" />
 ```
 
+# Marp Image Filters
+
+These work on bg and regular images
+
+```markdown
+![grayscale](./images/my_image.jpg)
+![sepia](./images/my_image.jpg)
+![blur](./images/my_image.jpg)
+![opacity](./images/my_image.jpg)
+```
+
+You can combine and parameterize them
+
+```markdown
+![brightness:.75 sepia:50%](./images/my_image.jpg)
+```
+
 ---
 
 # Videos
@@ -435,6 +453,21 @@ For a Two-Column 70/30 Split:
 </div>
 ```
 
+For arbritrary Two-Column Splits Using an Image one One Side and Text On Another
+
+```markdown
+
+- The Text I Want On The Right
+- More Rightside Text
+
+![bg left:35%](./images/my_image.jpg)
+
+<!--
+the text will take up the remaining space!
+-->
+
+```
+
 ---
 
 # SlideLinks
@@ -519,11 +552,17 @@ Keep a space between the span tags and the markdown list
 
 # MermaidMarp
 
+To add a Mermaid chart to your presentation, try the code below.
+
 NOTE: This works in a real web browser, so it should be good to go for your presentations. However, be aware that the letters aren't rendering correctly in the little Marp chrome preview window.
 
 NOTE: You can put the last 3 lines at the top of your first slide for presentation wide Mermaid use. Otherwise, if it's just for one slide, you could use as shown.
 
 ```markdown
+<!-- mermaid.js -->
+<script src="https://unpkg.com/mermaid@8.1.0/dist/mermaid.min.js"></script>
+<script>mermaid.initialize({startOnLoad:true});</script>
+
 <div class="mermaid">
 graph TD;
     A-->B;
@@ -532,10 +571,68 @@ graph TD;
     C-->D;
 </div>
 
-<!-- mermaid.js -->
-<script src="https://unpkg.com/mermaid@8.1.0/dist/mermaid.min.js"></script>
-<script>mermaid.initialize({startOnLoad:true});</script>
+
 ```
 
 ---
 
+# PlotlyMarp
+
+To add a Plotly graph to your presentation, try the code below.
+
+NOTE: You can put the first 3 lines at the top of your first slide for presentation wide Plotly use. Otherwise, if it's just for one slide, you could use as shown.
+
+```markdown
+
+<!-- Import Plotly dependencies -->
+---
+
+<script src="https://cdn.plot.ly/plotly-latest.min.js"></script>
+<link rel="stylesheet" href="https://cdn.plot.ly/plotly-1.58.4.min.css" />
+
+# Rate of Learning
+
+(Total Time Hypothesis)
+
+<div id="my-graph"></div>
+
+<style scoped>
+.plotly-graph-container {
+  margin-top: 0;
+  padding-top: 0;
+}
+</style>
+
+<script>
+// JavaScript code to create a Plotly graph
+var data = [
+  {
+    x: [7.5, 20],
+    y: [64, 8],
+    type: 'scatter',
+    line: {width: 4},
+    marker: {size: 10} 
+  }
+];
+
+var layout = {
+  yaxis: {
+    title: {text: "# Repetitions on Day 1", font: {size: 24}},
+    autorange: 'reversed',
+    range: [72, 0],
+    tickvals: [0, 8, 16, 24, 32, 40, 48, 56, 64, 72]
+  },
+  xaxis: {
+    title: {text: "Relearn Time on Day 2 (minutes)", font: {size: 24}},
+    range: [0, 25],
+    dtick: 5
+  },
+  margin: {t: 0, r: 0} // set top & right margins to 0
+};
+// 
+Plotly.newPlot('my-graph', data, layout);
+</script>
+
+---
+
+```
