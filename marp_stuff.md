@@ -290,7 +290,7 @@ This allows you to place an image anywhere on the slide!
 
 ---
 
-# ColumnateEqually
+# ColumnateContent
 
 If you want to columnate you content with equal columns, this is the section for you!
 
