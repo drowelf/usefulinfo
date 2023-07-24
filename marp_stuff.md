@@ -170,9 +170,18 @@ marp --pdf --html --output=. --input-dir=. --allow-local-files
 
 ### Workflow
 
-NOTE: the command in `dev.h` will automatically re-create slides.html from your `slides.md` file (that's what the `-w` flag does). It will also render the current slideshow in a little window so you can see what you are doing (that's what the `-p` flag does).
+NOTE: the command in `dev.sh` will automatically re-create slides.html from your `slides.md` file (that's what the `-w` flag does). It will also render the current slideshow in a little window so you can see what you are doing (that's what the `-p` flag does). Here is my workflow:
 
+- run `./dev.sh`
 - Make a change to slides.md
+- Whenever I want to see what I've done in the preview window, I save the file (or enable auto-save for continous updates)
+- If I want to see a full-size version in a webbrowser, I drag slides.html to my webbrowser (I use [Firefox](https://www.mozilla.org/en-US/firefox/new/)), but I have to refresh to see any subsequent changes (which is why I prefer to use the preview window).
+- To include images, I save them to the images folder and then refer to them as something like `./images/imagename.png`
+- To include videos, I save them to the media folder then refer to them as something like `./media/videoname.mp4`
+- When donw editing, I cancel out of the process running `./dev.sh` (e.g., using CTRL-C).
+- To create a PDF, I run `./make_pdf.sh`
+
+That's it. Making changes to  my slides is as easy as editing the text in `slides.md`.
 
 ---
 
