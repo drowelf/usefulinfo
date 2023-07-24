@@ -1,10 +1,11 @@
 # MARP FAQ
 
 - [What is Marp?](#WhatIsMarp)
-- [How do you install Marp?](#InstalingMarp)
+- [How do you install Marp?](#InstallingMarp)
 - [My Marp Workflow](#MarpCLIWorkflow)
 - [What is Marp2PDF?](#WhatIsMarp2PDF)
-
+- [Header Slides](#HeaderSlides)
+- [Images](#Images)
 
 ---
 
@@ -18,7 +19,7 @@ More about Marp Here: [https://marp.app/](https://marp.app/)
 
 ---
 
-# InstalingMarp
+# InstallingMarp
 
 ## Basic Setup
 
@@ -208,5 +209,56 @@ Why is `marp2pdf` commented out in `make_pdf.sh`?
 That's because it's not yet available publically. When it is, I'll adjust the relevant FAQs. For now, you can just use the default PDF Marp produces, or make the changes I indicated above yourself and then regenerate the PDF.
 
 ---
+
+# HeaderSlides
+
+I like headers largeish text over a full-slide images:
+
+```markdown
+![bg](images/fullslide_background_image.png)  <!-- nopdf -->
+
+# <span style="color:orange"><!--fit-->My Main Title</span>
+## <center>My Subtitle If Needed</center>
+### <center>For Lectures, I include Course, Quarter and Year</center>
+```
+
+---
+
+# Images
+
+## Plain markdown image spec:
+
+```markdown
+![](./images/myimage.jpg)
+```
+
+## With width specified in pixels (height will be auto-computed)
+
+```markdown
+![w:800px](./images/myimage.jpg)
+```
+
+## Centered
+
+Note: spaces between `div` tags and markdown is crucial!
+
+```markdown
+<div class="centerit">
+
+![w:800px](./images/myimage.jpg)
+
+</div>
+```
+
+# Absolute positioning
+
+This allows you to place an image anywhere on the slide!
+**Make sure you adjust the top, right, width, and height parameters**.
+
+```markdown
+<img src="./images/myimage.png" alt="My Image" style="position: absolute; top: 20px; right: 20px; width: 350px; height: auto;" />
+```
+
+
 
 
