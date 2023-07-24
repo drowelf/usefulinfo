@@ -1,4 +1,4 @@
-# MARP FAQ
+# My MARP FAQ
 
 - [What is Marp?](#WhatIsMarp)
 - [How do you install Marp?](#InstallingMarp)
