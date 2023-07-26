@@ -573,6 +573,18 @@ graph TD;
 </div>
 ```
 
+You can position diagrams using absolute coordinates and/or alter the bounding box like this:
+
+```markdown
+<div class="mermaid" style="position: absolute; top: 20px; right: 20px; width: 350px; height: auto;">
+graph TD;
+    A-->B;
+    A-->C;
+    B-->D;
+    C-->D;
+</div>
+```
+
 By default, Mermaid diagrams can be small. You can put something like this in the Marp frontmatter section to adjust Mermaid diagram size:
 
 ```
@@ -584,7 +596,7 @@ By default, Mermaid diagrams can be small. You can put something like this in th
   }
 ```
 
-<font color="orange">WARNING</font>: Mermaid doesn't work completely as expected in the Marp preview window.. If you want to preview Mermaid diagrams, drag slides.html to a real browser! 
+<font color="orange">WARNING</font>: Mermaid doesn't work completely as expected in the Marp preview window.. If you want to preview Mermaid diagrams, drag slides.html to a real browser! **Even If You Do**, Mermaid diagrams <i>still</i> won't look as is should, though they will be readable. You have been warned!
 
 ---
 
