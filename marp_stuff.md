@@ -585,6 +585,21 @@ graph TD;
 </div>
 ```
 
+You can style nodes by creating a style for the node you'd like to style:
+
+```markdown
+<div class="mermaid">
+graph TD;
+  Node1-->Node2
+  Node1-->Node3
+  Node1-->Node4
+  style Node4 fill:#bbf,stroke:#f66,stroke-width:2px,color:#fff,stroke-dasharray: 5 5
+</div>
+```
+
+<font color:"orange">Unfortunately, this ^^^ styling renders correctly for me in the preview, but **NOT** in Firefox!?</font> 
+
+
 By default, Mermaid diagrams can be small. You can put something like this in the Marp frontmatter section to adjust Mermaid diagram size:
 
 ```
