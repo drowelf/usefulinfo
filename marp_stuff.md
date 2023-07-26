@@ -584,6 +584,8 @@ By default, Mermaid diagrams can be small. You can put something like this in th
   }
 ```
 
+<font color="orange">WARNING</font>: Mermaid doesn't work completely as expected in the Marp preview window.. If you want to preview Mermaid diagrams, drag slides.html to a real browser! 
+
 ---
 
 # PlotlyMarp
