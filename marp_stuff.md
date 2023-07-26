@@ -469,6 +469,12 @@ the text will take up the remaining space!
 
 ```
 
+You can also use the bg directive to divy up slide into two unequal columns:
+
+```markdown
+![bg left:33%](./images/my_image.jpg)
+```
+
 ---
 
 # SlideLinks
